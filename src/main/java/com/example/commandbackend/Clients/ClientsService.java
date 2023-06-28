@@ -53,7 +53,6 @@ public class ClientsService {
         CriteriaBuilder cb = entityManager.getCriteriaBuilder();
         CriteriaQuery<Clients> query = cb.createQuery(Clients.class);
         Root<Clients> client = query.from(Clients.class);
-        Join<Clients, Orders> join = client.join("orders", JoinType.INNER);
 
         query.where(cb.equal(client.get("document"), document));
 
